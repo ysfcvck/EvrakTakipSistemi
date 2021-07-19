@@ -1,0 +1,83 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="webthemez" name="author" />
+    <link href="~/AdminPanel/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/AdminPanel/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/AdminPanel/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/admin/index"><strong><i class="icon fa fa-plane"></i> Yönetici Paneli</strong></a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- .dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="/home/index"><i class="fa fa-user fa-fw"></i> Personel Görünümü</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/user/logout"><i class="fa fa-user fa-fw"></i> Çıkış</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="/user/index"><i class="fa fa-dashboard"></i> Personel İşlemleri</a>
+                    </li>
+                    <li>
+                        <a href="/role/index"><i class="fa fa-dashboard"></i> Rol İşlemleri</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> Evrak İşlemleri<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/admin/incomingdoc">Gelen Evrak İşlemleri<span class="fa arrow"></span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/outgoingdoc">Giden Evrak İşlemleri<span class="fa arrow"></span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://webmail.evraktakip.online/default.aspx?=destek%40evraktakip.online"><i class="fa fa-dashboard"></i> E-Posta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/AdminPanel/js/jquery-1.10.2.js"></script>
+    <script src="~/AdminPanel/js/bootstrap.min.js"></script>
+    <script src="~/AdminPanel/js/jquery.metisMenu.js"></script>
+    <script src="~/AdminPanel/js/custom-scripts.js"></script>
+</body>
+</html>

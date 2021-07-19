@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\PC\Desktop\Proje\EvrakTakipSistemi\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2021-05-21T16:47:48.2562679Z;True|2021-05-21T19:42:37.4590453+03:00;True|2021-05-21T19:30:58.4131793+03:00;True|2021-05-19T01:24:06.7182117+03:00;True|2021-05-19T01:22:46.7095783+03:00;True|2021-05-18T23:35:10.6252641+03:00;True|2021-05-18T23:17:37.9208125+03:00;True|2021-05-18T03:11:46.8020798+03:00;True|2021-05-09T13:55:29.8818832+03:00;True|2021-05-06T10:23:48.2732814+03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SqlServerConnectionString">
+      <Value>Server=plsk21.servername.co.\MSSQLSERVER2019%3bDatabase=evrakTakipDb%3bUser Id=evrakTakip%3bpassword=%40Yusuf41!%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="EvrakTakipSistemi.Models.Context.AppDbContext">
+      <Value>Server=plsk21.servername.co.\MSSQLSERVER2019%3bDatabase=evrakTakipDb%3bUser Id=evrakTakip%3bpassword=%40Yusuf41!%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

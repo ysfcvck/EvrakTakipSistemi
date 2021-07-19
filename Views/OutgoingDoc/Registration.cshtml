@@ -1,0 +1,50 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.OutgoingDoc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Evrak Kayıt</title>
+<h1 class="baslık">Giden Evrak Kayıt Formu</h1><br />
+<body>
+    <div class="content-regist">
+
+        @using (Html.BeginForm())
+        {
+            <div id="regist">
+                <label class="label-regist">Barkod No:</label>
+                @Html.TextBoxFor(x => x.BarcodeNo, new { @placeholder = "Barkod No", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.BarcodeNo, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Belge Tarihi:</label>
+                @Html.TextBoxFor(x => x.DocDate, "{0:dd/MM/yyyy}", new { @placeholder = "Belge Tarihi (AA.GG.YYYY) Formatında Giriniz..", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.DocDate, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Belge Tipi:</label>
+                @Html.TextBoxFor(x => x.DocType, new { @placeholder = "Belge Tipi", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.DocType, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Personel Id:</label>
+                @Html.TextBox("UserID", (string)ViewBag.userId, new { @readonly = true, @class = "form-control-registration" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Departman:</label>
+                @Html.DropDownListFor(x => x.DepartID, (List<SelectListItem>)ViewBag.dgr, "--Lütfen Departman Seçin--", new { @class = "form-control-registration" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Açıklama:</label>
+                @Html.TextAreaFor(x => x.Descr, new { @placeholder = "   Açıklama", @class = "form-control-registration", @id = "area2" })
+                @Html.ValidationMessageFor(model => model.Descr, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <input type="submit" value="Kaydet">
+            </div>
+            <div style="text-align:center;">
+                <a style="color: #1f2739;" href="/outgoingdoc/index">▹Giden Evrak Listesi</a>
+            </div><br />
+        }
+    </div>
+</body>

@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Uyarı</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center; color:red;">UYARI</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Evrak kaydetme işleminde giriş yapılan personelin id numarası işlenmektetir. Evrak kayıt işleminde oluşacak hatalardan oturum sahibi sorumludur.</p>
+                        <p>Eğer devam ederseniz tüm şartları kabul etmiş olursunuz..</p>
+                        <a href="/user/UserAgreement" style="color:#9b4343; text-align:center;">Kullanıcı Sözleşmesi</a>
+                        <div class="modal-footer">
+                            <a href="/home/index" class="btn btn-primary">Devam Et</a>
+                            <a href="/user/logout" class="btn btn-danger">Çıkış</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>
+

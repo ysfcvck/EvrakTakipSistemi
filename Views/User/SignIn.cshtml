@@ -1,0 +1,80 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.AppUserViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kayıt Ol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center;">PERSONEL KAYIT FORMU</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        @if (ViewBag.State == null)
+                         {
+                            @using (Html.BeginForm())
+                            {
+                                <label>Ad Soyad:</label>
+                                @Html.TextBoxFor(x => x.NameSurname, new { @placeholder = "Ad Soyad..", @class = "form-control" }) <br />
+
+                                <label>Kullanıcı Adı:</label>
+                                @Html.TextBoxFor(x => x.UserName, new { @placeholder = "Kullanıcı Adı", @class = "form-control" })<br />
+
+                                <label>Eposta:</label>
+                                @Html.TextBoxFor(x => x.Email, new { @placeholder = "Eposta..", @class = "form-control" })<br />
+
+                                <label>Telefon Numarası:</label>
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @placeholder = "Telefon Numarası", @class = "form-control" })<br />
+
+                                <label>Adres:</label>
+                                @Html.TextBoxFor(x => x.Adress, new { @placeholder = "Adres..", @class = "form-control" })<br />
+
+                                <label>Şifre:</label>
+                                @Html.PasswordFor(x => x.Sifre, new { @placeholder = "Şifre..", @class = "form-control" })<br />
+
+                                <div asp-validation-summary="All" style="color:red;"></div>
+
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">Gönder</button>
+                                    <a href="/user/login" class="btn btn-danger">İptal</a>
+                                </div>
+                             }
+                         }
+                        else
+                        {
+                            if (ViewBag.State)
+                            {
+                                @:<div class="alert-info">Bilgileriniz en kısa sürede incelenecektir. Hesabınız onaylandığı zaman eposta adresinize bilgilendirme mesajı göderilecektir.</div><br />
+                                <div class="modal-footer">
+                                    <a href="/user/login" class="btn btn-primary">Giriş Yap</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>
+
+

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/UserPanel/css/Home.css" rel="stylesheet" />
+    <title>Ana Sayfa</title>
+</head>
+<body>
+    <h1 style="text-align:center; margin-top: 50px;">Evrak Takip Sistemine</h1>
+    <h1 style="text-align:center;">Hoş Geldiniz</h1>
+    <div class="container">
+        <br /><hr /><br />
+        <h2>Gelen Evrak</h2>
+        <p>Kuruma elden, kargo, posta, faks, KEP, mail gibi birçok kaynaktan kurum içi ya da dışı, fiziksel ya da elektronik dokümanlar, belgeler gelir. Bu dokümanların yoğunluğu hangi seviyede olursa olsun yönetilmesi gerekir.</p>
+        <p>Doküman, sisteme kazandırılırken etiketleme yapılarak barkod numarası, belge tarihi, belge tipi, hangi kurum, kişi ya da tüzel kişilikten geldiği, konusu, hangi departmana geldiği ve belgeyi işleyen personel bilgileri ile saklanmış olur. Gelen evrak kayıt defteri raporlanabilir ve yönetilebilir hale gelmiş olur.</p><br />
+        <br /><hr /><br />
+        <h2>Giden Evrak</h2>
+        <p>Kurumlar iş yapma biçimlerine göre diğer kurumlarla ya da birimler arası iç yazışma ya da dış yazışma yapar. Resmi yazışma usul ve esaslar standardına göre yazışma yapmayı benimsemiş olsun ya da olmasın giden evrak yönetimi yapılır.</p>
+        <p>Doküman, sisteme kazandırılırken etiketleme yapılarak barkod numarası, belge tarihi, belge tipi, hangi kurum, kişi ya da tüzel kişilikten geldiği, konusu, hangi departmana geldiği ve belgeyi işleyen personel bilgileri ile saklanmış olur. Giden evrak kayıt defteri raporlanabilir ve yönetilebilir hale gelmiş olur.</p>
+    </div><br />
+    <div style="text-align:center;">
+        <button class="btn-admin" onclick="document.location='/admin/index'">Yönetici Paneli</button>
+    </div>
+</body>
+</html>

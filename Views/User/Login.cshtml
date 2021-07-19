@@ -1,0 +1,86 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Evrak Takip Sistemi</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link href="~/Login/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="h1">EVRAK TAKİP SİSTEMİ</h1><br /><br /><br />
+    <div class="container" id="container">
+        <!--Personel Giriş Formu-->
+        <div class="form-container sign-in-container">
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            {
+                <h1>Personel Girişi</h1><br /><br />
+
+                @Html.ValidationMessageFor(model => model.Email, "", new { @style = "color:red" })
+                <input type="email" placeholder="Eposta.." name="Email" />
+                @Html.ValidationMessageFor(model => model.Password, "", new { @style = "color:red" })
+                <input type="password" placeholder="Şifre.." name="Password" /><br />
+                <button>Giriş Yap</button>
+                <a href="/user/passwordreset">Şifremi Unuttum</a><br /><br />
+                <label>veya</label><br />
+                <a href="/User/SignIn">Kayıt Ol</a>
+            }
+        </div>
+        <!--Yönetici Giriş Formu-->
+        <div class="form-container sign-up-container">
+            @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+            {
+                <h1>Yönetici Girişi</h1><br /><br />
+
+                @Html.ValidationMessageFor(model => model.Email, "", new { @style = "color:red" })
+                <input type="email" placeholder="Eposta.." name="Email" />
+                @Html.ValidationMessageFor(model => model.Password, "", new { @style = "color:red" })
+                <input type="password" placeholder="Şifre.." name="Password" /><br />
+                <button>Giriş Yap</button>
+                <a href="/user/passwordreset">Şifremi Unuttum</a><br /><br />
+                <label>veya</label><br />
+                <a href="/User/SignIn">Kayıt Ol</a>
+            }
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Merhaba,</h1>
+                    <p>
+                        Evrak kayıt sistemine hoş geldiniz. Sistemde yapılacak olan tüm işlemlerden hesap sahibi sorumludur.
+                        Hesabınızla ilgili bir problem olduğunu düşünüyorsanız lütfen bizimle iletişime geçin.
+                    </p>
+                    <p><a style="color:#c1c1c1;" href="/user/UserAgreement">Kullanıcı Sözleşmesi</a></p><br />
+                    <p>İyi çalışmalar dileriz..</p>
+                    <button class="ghost" id="signIn">~ Personel Girişi ~</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Merhaba,</h1>
+                    <p>
+                        Evrak kayıt sistemine hoş geldiniz. <br />Lütfen hesap bilgilerinizi başkalarıyla paylaşmayın.
+                        Hesabınızla ilgili bir problem olduğunu düşünüyorsanız lütfen bizimle iletişime geçin.
+                    </p>
+                    <p><a  style="color:#c1c1c1;" href="/user/UserAgreement">Kullanıcı Sözleşmesi</a></p><br />
+                    <p>İyi çalışmalar dileriz..</p>
+                    <button class="ghost" id="signUp">~ Yönetici Girişi ~</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--HATA MESAJLARI -->
+    <div id="divPartial">
+        @if (TempData["ErrorMsg"] != null)
+        {
+            <p style="color:red;" class="alert alert-warning" role="alert">@TempData["ErrorMsg"] <br /></p>
+        }
+    </div>
+    <script src="~/Login/Login.js"></script>
+</body>
+</html>

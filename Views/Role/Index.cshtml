@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EvrakTakipSistemi.Models.Authentication.AppRole>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<title>Rol Liste</title>
+<a style="float:left; font-size:inherit; color:#36b9bf;" href="/role/createrole">▹Rol Ekle</a>
+<div style="color:red; margin-right:175px; text-align:right;">@TempData["ErrorMsg"]</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Olusturulma Tarihi
+            </th>
+            <th>
+                Rol Adı
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OlusturulmaTarihi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Sil", "deleterole", new { id = item.Id }, new { @class = "btn btn-warning", onclick = "return confirm('U Y A R I   |   Kayıt silinmek üzere..');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

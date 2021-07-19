@@ -1,0 +1,41 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>İletişim</title>
+<h1 class="baslık">İletişim Formu</h1>
+<body>
+    <div class="content-regist">
+        @using (Html.BeginForm())
+        {
+            <br>
+            <div id="regist">
+                <label class="label-regist">Konu:</label>
+                @Html.TextBoxFor(x => x.baslik, new { @placeholder = "Konu..", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.baslik, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Ad Soyad:</label>
+                @Html.TextBoxFor(x => x.AdSoyad, new { @placeholder = "Ad Soyad..", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">E-posta:</label>
+                @Html.TextBoxFor(x => x.eposta, new { @placeholder = "Eposta..", @class = "form-control-registration" })
+                @Html.ValidationMessageFor(model => model.eposta, "", new { @style = "color:red" })
+            </div>
+            <div id="regist">
+                <label class="label-regist">Mesaj:</label>
+                @Html.TextAreaFor(x => x.icerik, new { @placeholder = "    Lütfen iletmek istediğiniz mesajı yazın..", @class = "form-control-registration", @id = "contactArea" })
+                @Html.ValidationMessageFor(model => model.icerik, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <input type="submit" value="Gönder">
+            </div><br />
+            <div class="alert alert-info" style="color:#0b2bc7; margin-left:28px;">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</body>

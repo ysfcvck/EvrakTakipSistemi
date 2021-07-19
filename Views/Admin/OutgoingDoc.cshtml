@@ -1,0 +1,88 @@
+﻿@using EvrakTakipSistemi.Models.ViewModels
+
+@model List<OutgoingDoc>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<title>Evrak Listesi</title>
+<link href="~/AdminPanel/css/SearchFilter.css" rel="stylesheet" />
+<body>
+        <!--GİDEN EVRAK TABLO FİLTRELEME (ARAMA)-->
+    <div class="searchArea">
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("barkodAra", null, new { @class = "form-control-search", @placeholder = "Barkod ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("birimAra", null, new { @class = "form-control-search", @placeholder = "Birim-ID ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("personelAra", null, new { @class = "form-control-search", @placeholder = "Personel-ID ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("tarihAra", null, new { @class = "form-control-search", @placeholder = "Tarih ile Ara" })
+                </div>
+            }
+        </div>
+        <div>
+            <button class="clean-filter" onclick="document.location='/admin/outgoingdoc'">Filtreyi Temizle</button>
+        </div>
+    </div>
+         
+    <div class="content">
+        <a style="float:left; font-size:inherit; color:#36b9bf;" href="/outgoingdoc/exportexcel">▹Listeyi İndir</a>
+        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Barkod No</th>
+                    <th>Belge Tarihi</th>
+                    <th>Belge Tipi</th>
+                    <th>Birim ID</th>
+                    <th>Personel ID</th>
+                    <th width="30%">Açıklama</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.ID</td>
+                        <td>@x.BarcodeNo</td>
+                        <td>@x.DocDate.ToString("dd.MM.yyyy")</td>
+                        <td>@x.DocType</td>
+                        <td>@x.DepartID</td>
+                        <td>@x.UserID</td>
+                        <td>@x.Descr</td>
+                        <td><a href="~/admin/outgoingdocget/@x.ID" class="btn btn-primary">Güncelle</a></td>
+                        <td>@Html.ActionLink("Sil", "deleteoutgoingdoc", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('U Y A R I   |   Kayıt silinmek üzere..');" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+

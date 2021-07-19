@@ -1,0 +1,485 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+}
+
+
+body {
+    background-image: url(/images/11.jpg);
+    background-position: center center;
+    background-size: cover;
+    color: #eee;
+    font-family: 'Lato', sans-serif;
+    font-size: 62.5%;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background: #1b1b1b;
+}
+
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    nav .logo {
+        float: left;
+        color: white;
+        font-size: 27px;
+        font-weight: 600;
+        line-height: 70px;
+        padding-left: 60px;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+    }
+
+        nav ul li {
+            float: left;
+            display: inline-block;
+            background: #1b1b1b;
+            margin: 0 5px;
+        }
+
+            nav ul li a {
+                color: #c1c1c1;
+                line-height: 70px;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 8px 15px;
+            }
+
+                nav ul li a:hover {
+                    color: cyan;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+                }
+
+        nav ul ul li a:hover {
+            box-shadow: none;
+        }
+
+        nav ul ul {
+            position: absolute;
+            top: 90px;
+            border-top: 3px solid cyan;
+            opacity: 0;
+            visibility: hidden;
+            transition: top .3s;
+        }
+
+            nav ul ul ul {
+                border-top: none;
+            }
+
+        nav ul li:hover > ul {
+            top: 70px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        nav ul ul li {
+            position: relative;
+            margin: 0px;
+            width: 150px;
+            float: none;
+            display: list-item;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+        }
+
+            nav ul ul li a {
+                line-height: 50px;
+            }
+
+        nav ul ul ul li {
+            position: relative;
+            top: -60px;
+            left: 150px;
+        }
+
+        nav ul li ul li a {
+            font-size: 14px;
+        }
+
+.show, .icon, .checkbox {
+    display: none;
+}
+
+.fa-plus {
+    font-size: 15px;
+    margin-left: 40px;
+}
+
+@media all and (max-width: 968px) {
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
+
+    nav .logo {
+        padding-left: 30px;
+        width: 100%;
+    }
+
+    .show + a, ul {
+        display: none;
+    }
+
+    nav ul li, nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+        nav ul li a:hover {
+            box-shadow: none;
+        }
+
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+
+        .show:hover {
+            color: cyan;
+        }
+
+    .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        line-height: 70px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    nav ul ul {
+        top: 70px;
+        border-top: 0px;
+        float: none;
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+        nav ul ul a {
+            padding-left: 40px;
+        }
+
+        nav ul ul ul a {
+            padding-left: 80px;
+        }
+
+        nav ul ul ul li {
+            position: static;
+        }
+
+    [id^=btn]:checked + ul {
+        display: block;
+    }
+
+    nav ul ul li {
+        border-bottom: 0px;
+    }
+
+    span.cancel:before {
+        content: '\f00d';
+    }
+}
+
+header {
+    font-size: 35px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/*----- TABLES -----*/
+.content {
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin: 20px auto;
+    margin-top: 10px;
+    width: 1300px;
+    color: #eee;
+}
+
+#content1 {
+    background-color: #ccd3cc;
+    height: 78px;
+}
+
+#content2 {
+    margin-top: 0px;
+}
+
+
+.content ul {
+    margin: .5em 2em;
+    padding: 0;
+}
+
+.baslık {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 37px;
+    color: #2d3f4e;
+    text-decoration: underline;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+
+/*----- TABLES -----*/
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    display: table;
+    margin-top: 50px;
+}
+
+    .container td, .container th {
+        padding-bottom: 2%;
+        padding-top: 2%;
+        padding-left: 2%;
+    }
+
+    /* Üst satır */
+    .container tr:nth-child(odd) {
+        background-color: #323C50;
+    }
+
+    /* Alt Satır */
+    .container tr:nth-child(even) {
+        background-color: #2C3446;
+    }
+
+    .container th {
+        background-color: #1F2739;
+    }
+
+    .container td:first-child {
+        color: #FB667A;
+    }
+
+    .container tr:hover {
+        background-color: #464A52;
+        -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+        -moz-box-shadow: 0 6px 6px -6px #0E1119;
+        box-shadow: 0 6px 6px -6px #0E1119;
+    }
+
+    .container td:hover {
+        background-color: #2a504a;
+        color: white;
+        font-weight: bold;
+        box-shadow: #1c3532 -1px 1px, #1c3532 -2px 2px, #1c3532 -3px 3px, #1c3532 -4px 4px, #1c3532 -5px 5px, #1c3532 -6px 6px;
+        transform: translate3d(6px, -6px, 0);
+        transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+        transition-timing-function: linear;
+    }
+
+@media (max-width: 800px) {
+    .container td:nth-child(4),
+    .container th:nth-child(4) {
+        display: none;
+    }
+}
+
+/* Tablo Filtreleme/Arama */
+.search {
+    margin-top: 16px;
+    float: left;
+    height: 50px;
+    border-collapse: inherit;
+    margin-left: 80px;
+}
+
+.form-control-search {
+    background-color: #f1f6ef;
+    color: black;
+}
+
+::-webkit-input-placeholder {
+    color: cadetblue;
+}
+
+/* Tablo Filtre Temizleme */
+.clean-filter {
+    border-radius: 13px;
+    background-color: #1f2739;
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+input[type=text], select {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+input[type=submit] {
+    height: 50px;
+    width: 450px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 0 23px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-control-registration {
+    height: 50px;
+    width: 450px;
+    background-color: #ecf2e8;
+    color: black;
+    margin-right: 10px;
+    margin: 0 23px;
+}
+
+.content-regist {
+    width: 500px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin: 0 auto;
+    color: #eee;
+    background-color: #ccd3cc;
+    margin-top: 5px;
+}
+
+#contactArea {
+    height: 250px;
+    resize: none;
+    border-radius: 5px;
+}
+
+#area2 {
+    height: 150px;
+    resize: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.field-validation-error {
+    margin-left: 23px;
+    margin-top: 0px;
+}
+
+
+/* FOOTER */
+.footer-area {
+    margin-top: 120px;
+    width: 100%;
+    height: 175px;
+    background-color: #1b1b1b;
+    position: relative;
+}
+
+.footer-items {
+    text-align: center;
+    margin-top: 20px;
+    float: left;
+    color: white;
+    padding-left: 100px;
+}
+
+    .footer-items a {
+        color: #bfbfbf;
+        text-decoration: none !important;
+    }
+
+.footer-area ul {
+    list-style-type: none;    
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.footer-area h3 {
+    font-size: 15px;
+    color: #636363;
+}
+.footer-logo{
+    color:white;
+    font-size:22px;
+    float:left;
+    margin-top:20px;
+}
+.footer-items p {
+    font-size: 12px;
+    color: #bfbfbf;
+}
+#footer {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin:auto;
+}
+
+.siteInfo::after {
+    color: #bfbfbf;
+    content: "Evrak Takip Sistemi  \00A9  2021 - Tüm hakları saklıdır. ";
+    font-size: 13px;
+    bottom: 5px;
+}
+
+
+.label-regist {
+    color: black;
+    margin: 0 23px;
+    font-weight: bold;
+}
+#regist{
+    padding:5px;
+}

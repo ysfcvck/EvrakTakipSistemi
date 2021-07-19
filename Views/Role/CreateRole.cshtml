@@ -1,0 +1,44 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.RoleViewModel
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Rol Ekle</title>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center;">ROL EKLEME</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        @using (Html.BeginForm())
+                        {
+                            <b>Rol Adı:</b><br />
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary">Ekle</button>
+                                <a href="/role/index" class="btn btn-danger">İptal</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>

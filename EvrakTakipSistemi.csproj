@@ -1,0 +1,160 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>38db922e-2a95-49eb-9ccd-7eb8e4cc8ef1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\AdminPanel\assets\**" />
+    <Content Remove="wwwroot\AdminPanel\assets\**" />
+    <EmbeddedResource Remove="wwwroot\AdminPanel\assets\**" />
+    <None Remove="wwwroot\AdminPanel\assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.95.4" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\jquery-validate\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validate\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validate\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ar.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ar.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_az.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_az.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_bg.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_bg.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_bn_BD.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_bn_BD.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ca.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ca.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_cs.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_cs.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_da.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_da.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_de.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_de.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_el.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_el.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es_AR.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es_AR.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es_PE.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_es_PE.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_et.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_et.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_eu.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_eu.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fa.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fa.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fi.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fi.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fr.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_fr.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ge.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ge.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_gl.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_gl.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_he.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_he.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hr.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hr.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hu.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hu.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hy_AM.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_hy_AM.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_id.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_id.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_is.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_is.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_it.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_it.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ja.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ja.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ka.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ka.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_kk.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_kk.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ko.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ko.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_lt.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_lt.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_lv.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_lv.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_mk.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_mk.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_my.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_my.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_nl.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_nl.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_no.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_no.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pl.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pl.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pt_BR.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pt_BR.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pt_PT.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_pt_PT.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ro.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ro.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ru.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ru.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sd.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sd.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_si.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_si.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sk.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sk.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sl.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sl.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sr.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sr.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sr_lat.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sr_lat.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sv.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_sv.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_th.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_th.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_tj.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_tj.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_tr.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_tr.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_uk.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_uk.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ur.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_ur.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_vi.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_vi.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_zh.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_zh.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_zh_TW.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\messages_zh_TW.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_de.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_de.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_es_CL.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_es_CL.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_fi.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_fi.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_it.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_it.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_nl.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_nl.min.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_pt.js" />
+    <None Include="wwwroot\lib\jquery-validate\localization\methods_pt.min.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+  </ItemGroup>
+
+</Project>

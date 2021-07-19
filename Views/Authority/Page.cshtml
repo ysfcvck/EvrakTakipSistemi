@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Erişim Engellendi</title>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center; color:red;">ERİŞİM ENGELLENDİ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p style="font-size:18px;">Bu işlem için yetkiniz bulunmamaktadır.</p>
+                        <p  style="font-size:17px;">Lütfen aşağıdaki bağlantıları kullanarak tekrar giriş yapmayı deneyin ya da geri dönün.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" href="https://evraktakip.online/User/Login">Giriş</a>
+                        <a class="btn btn-primary" href="#" onclick="history.back();">Geri Dön</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>

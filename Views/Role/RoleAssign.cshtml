@@ -1,0 +1,67 @@
+﻿@model List<EvrakTakipSistemi.Models.ViewModels.RoleAssignViewModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "RoleAssign";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <title>Yetki Ver</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/AdminPanel/css/HideRow.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center;">ROL LİSTESİ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="RoleAssign" asp-controller="Role">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                        </th>
+                                        <th>
+                                            Rol Adı
+                                        </th>
+                                        <th>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Model[i].RoleName
+                                            <input type="hidden" asp-for="@Model[i].RoleId" />
+                                            <input type="hidden" asp-for="@Model[i].RoleName" />
+                                        </td>
+                                        <td></td>
+                                        <td><input type="checkbox" asp-for="@Model[i].HasAssign" /> </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary">Yetki Ver</button>
+                                <a href="/user/index" class="btn btn-danger">İptal</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>

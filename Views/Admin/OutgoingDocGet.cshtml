@@ -1,0 +1,65 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.OutgoingDoc
+@{
+    ViewData["Title"] = "OutgoingDocGet";
+    Layout = Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Evrak Düzenle</title>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center;">GİDEN EVRAK DÜZENLEME</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        @using (Html.BeginForm("updateoutgoingdoc", "admin", FormMethod.Post))
+                        {
+                            <b>Id</b>
+                            @Html.TextBoxFor(x => x.ID, new { @readonly = true, @class = "form-control" })
+
+                            <b>Barkod No</b><br />
+                            @Html.ValidationMessageFor(model => model.BarcodeNo, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.BarcodeNo, new { @class = "form-control" })
+
+                            <b>Belge Tarihi</b><br />
+                            @Html.ValidationMessageFor(model => model.DocDate, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.DocDate, "{0:MM/dd/yyyy}", new { @placeholder = "Belge Tarihi (AA.GG.YYYY) Formatında Giriniz..", @class = "form-control" })
+
+                            <b>Belge Tipi</b><br />
+                            @Html.ValidationMessageFor(model => model.DocType, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.DocType, new { @class = "form-control" })
+
+                            <b>Birim Id</b><br />
+                            @Html.ValidationMessageFor(model => model.DepartID, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.DepartID, new { @class = "form-control" })
+
+                            <b>Personel Id</b><br />
+                            @Html.TextBoxFor(x => x.UserID, (String)ViewBag.userId, new { @readonly = true, @class = "form-control" })
+
+                            <b>Açıklama</b><br />
+                            @Html.ValidationMessageFor(model => model.Descr, "", new { @style = "color:red" })
+                            @Html.TextAreaFor(x => x.Descr, new { @class = "form-control", @id = "area" })
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary">Güncelle</button>
+                                <a href="/admin/outgoingdoc" class="btn btn-danger">İptal</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true  });
+    });
+</script>

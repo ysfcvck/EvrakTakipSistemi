@@ -1,0 +1,63 @@
+﻿@model EvrakTakipSistemi.Models.ViewModels.AppUserViewModel
+@{
+    ViewData["Title"] = "IncomingDocGet";
+    Layout = Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <title>Bilgi Güncelle</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align:center;">Bilgi Düzenle</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        @using (Html.BeginForm())
+                        {
+                            <b>Personel Id:</b>
+                            @Html.TextBoxFor(x => x.Id, new { @readonly = true, @class = "form-control" })
+
+                            <b>Ad Soyad:</b><br />
+                            @Html.ValidationMessageFor(model => model.NameSurname, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+
+                            <b>Kullanıcı Adı:</b><br />
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+
+                            <b>E-Posta:</b><br />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+
+                            <b>Telefon Numarası:</b><br />
+                            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+
+                            <b>Adres:</b><br />
+                            @Html.ValidationMessageFor(model => model.Adress, "", new { @style = "color:red" })
+                            @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary">Güncelle</button>
+                                <a href="/user/index" class="btn btn-danger">İptal</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+    });
+</script>
+

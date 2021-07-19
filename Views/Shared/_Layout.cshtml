@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="~/UserPanel/css/sitesLight.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            Evrak Takip Sistemi
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input class="checkbox" type="checkbox" id="btn">
+        <ul>
+            <li><a href="/home/index">Anasayfa</a></li>
+            <li>
+                <label for="btn-1" class="show">Evrak Kayıt +</label>
+                <a href="#">Evrak Kayıt</a>
+                <input class="checkbox" type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="/incomingdoc/registration">GelenEvrak Kayıt</a></li>
+                    <li><a href="/outgoingdoc/registration">GidenEvrak Kayıt</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">Evrak Liste +</label>
+                <a href="#">Evrak Liste</a>
+                <input class="checkbox" type="checkbox" id="btn-2">
+                <ul>
+                    <li><a href="/incomingdoc/index">GelenEvrak Liste</a></li>
+                    <li><a href="/outgoingdoc/index">GidenEvrak Liste</a></li>
+                </ul>
+            </li>
+            <li><a href="/home/contact">İletişim</a></li>
+            <li><a href="/user/logout">Çıkış</a></li>
+        </ul>
+    </nav>
+    <script>
+        $('.icon').click(function () {
+            $('span').toggleClass("cancel");
+        });
+    </script>
+    @RenderBody()
+
+    <div class="footer-area">
+        <div id="footer">
+            <div class="footer-logo">
+                <h4>Evrak Takip</h4>
+                <h4>Sistemi</h4>
+            </div>
+            <div class="footer-items">
+                <h3>Kayıt İşlemleri</h3>
+                <ul>
+                    <li><a href="/incomingdoc/registration">Gelen Evrak Kayıt</a></li>
+                    <li><a href="/outgoingdoc/registration">Giden Evrak Kayıt</a></li>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h3>Evrak Listeleme</h3>
+                <ul>
+                    <li><a href="/incomingdoc/index">Gelen Evraklar</a></li>
+                    <li><a href="/outgoingdoc/index">Giden Evraklar</a></li>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h3>Diğer</h3>
+                <ul>
+                    <li><a href="/admin/index">Yönetici Paneli</a></li>
+                    <li><a href="/user/UserAgreement">Kullanıcı Sözleşmesi</a></li>
+                    <li><a href="/user/logout">Oturumu Kapat</a></li>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h3>İletişim</h3>
+                <p style="margin-top:10px;">Mimar Sinan Mh. Atalar Cd.</p>
+                <p>No: 445/53 Körfez / KOCAELİ</p>
+                <p>Tel: +90 553 803 11 41</p>
+                <p>e-Posta: destek@evraktakip.online</p>
+                <ul>
+                    <li><a href="/home/contact">Bize yazın</a></li>
+                </ul>
+            </div>
+            <div class="siteInfo" style="text-align:center;"></div>
+        </div>
+    </div>
+</body>
+</html>

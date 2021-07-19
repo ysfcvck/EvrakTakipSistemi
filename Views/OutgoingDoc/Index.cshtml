@@ -1,0 +1,86 @@
+﻿@using EvrakTakipSistemi.Models.ViewModels
+@model List<OutgoingDoc>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Evrak Listesi</title>
+<h1 class="baslık">Giden Evrak Listesi</h1><br />
+<body>
+        <!--GİDEN EVRAK TABLO FİLTRELEME-->
+   <div class="content" id="content1">
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("barkodAra", null, new { @class = "form-control-search", @placeholder = "Barkod ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("birimAra", null, new { @class = "form-control-search", @placeholder = "Birim-ID ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("personelAra", null, new { @class = "form-control-search", @placeholder = "Personel-ID ile Ara" })
+                </div>
+            }
+        </div>
+
+        <div class="search">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.TextBox("tarihAra", null, new { @class = "form-control-search", @placeholder = "Tarih ile Ara" })
+                </div>
+            }
+        </div>
+        <div>
+            <button class="clean-filter" onclick="document.location='/outgoingdoc/index'">Filtreyi Temizle</button>
+        </div>
+   </div>
+
+   <div class="content" >
+        <a style="color:#1f2739;margin-top:10px;" href="/outgoingdoc/registration">▹Evrak Kaydet</a>
+        <a style="color:#1f2739; margin-top:10px; " href="/outgoingdoc/exportexcel">▹Listeyi İndir</a>
+
+        <table class="container" id="content2">
+            <thead>
+                <tr>
+                    <th style="width: 5%">ID</th>
+                    <th>Barkod No</th>
+                    <th>Belge Tarihi</th>
+                    <th>Belge Tipi</th>
+                    <th>Birim ID</th>
+                    <th>Personel ID</th>
+                    <th width="30%">Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.ID</td>
+                        <td>@x.BarcodeNo</td>
+                        <td>@x.DocDate.ToString("dd.MM.yyyy")</td>
+                        <td>@x.DocType</td>
+                        <td>@x.DepartID</td>
+                        <td>@x.UserID</td>
+                        <td>@x.Descr</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+   </div>
+</body>
