@@ -1,11 +1,11 @@
   **User Interface**
-- In order to log in to the system, the Admin/Moderator must be assigned a role to the user after registration.
-- After the role is assigned, the user receives an informative mail. The user can login to the system after receiving this mail.
+- In order to log in to the system, the Admin/Moderator must assign a role to the user after registration.
+- After the role is assigned, the user receives an informative mail. The user can log in to the system after receiving this mail.
 - In the upper bar, there are documents registration and listing, communication and exit buttons.
 - Must enter the necessary information for incoming/outgoing document registration.
-- The id of the user logging into the system is automatically entered into the recorded documents.
-- The message to be sent on the contact page is sent to the system e-mail.
-- Filtering can be done on the listing page according to the barcode number, department id, personnel id or date of the document.
+- The ID of the user logging into the system is automatically entered into the recorded documents.
+- The message sent on the contact page is directed to the system e-mail.
+- Filtering can be done on the listing page according to the barcode number, department ID, personnel ID or date of the document.
 - There is a button on the homepage and footer to switch to the admin panel.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
